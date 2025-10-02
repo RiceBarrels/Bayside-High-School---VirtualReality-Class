@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box wireframe="true" position="0 0 0" rotation="0 0 0" width="10" height="5" depth="5" color="#C0C0C0">
+        <!-- Main truck body (cab) -->
+        <a-box position="0 1 0" rotation="0 0 0" width="3" height="1.5" depth="2" color="#C0C0C0"></a-box>
+        
+        <!-- Windshield (angled) -->
+        <a-box position="0 1.8 0.8" rotation="15 0 0" width="2.8" height="0.8" depth="0.1" color="#87CEEB" material="opacity: 0.6;"></a-box>
+        
+        <!-- Truck bed -->
+        <a-box position="0 0.8 -2" rotation="0 0 0" width="3" height="1" depth="2.5" color="#C0C0C0"></a-box>
+        
+        <!-- Tailgate -->
+        <a-box position="0 0.8 -3.3" rotation="0 0 0" width="3" height="1" depth="0.1" color="#B0B0B0"></a-box>
+        
+        <!-- Front bumper -->
+        <a-box position="0 0.4 1" rotation="0 0 0" width="3.2" height="0.3" depth="0.4" color="#A0A0A0"></a-box>
+        
+        <!-- Wheels (cylinders) -->
+        <a-cylinder position="-1.3 0.3 0.5" rotation="0 0 90" radius="0.4" height="0.3" color="#2F2F2F"></a-cylinder>
+        <a-cylinder position="1.3 0.3 0.5" rotation="0 0 90" radius="0.4" height="0.3" color="#2F2F2F"></a-cylinder>
+        <a-cylinder position="-1.3 0.3 -1.5" rotation="0 0 90" radius="0.4" height="0.3" color="#2F2F2F"></a-cylinder>
+        <a-cylinder position="1.3 0.3 -1.5" rotation="0 0 90" radius="0.4" height="0.3" color="#2F2F2F"></a-cylinder>
+
+        <!-- Wheel rims -->
+        <a-cylinder position="-1.3 0.3 0.5" rotation="0 0 90" radius="0.25" height="0.35" color="#D3D3D3"></a-cylinder>
+        <a-cylinder position="1.3 0.3 0.5" rotation="0 0 90" radius="0.25" height="0.35" color="#D3D3D3"></a-cylinder>
+        <a-cylinder position="-1.3 0.3 -1.5" rotation="0 0 90" radius="0.25" height="0.35" color="#D3D3D3"></a-cylinder>
+        <a-cylinder position="1.3 0.3 -1.5" rotation="0 0 90" radius="0.25" height="0.35" color="#D3D3D3"></a-cylinder>
+
+        <!-- Headlights -->
+        <a-sphere position="-0.8 0.8 1" radius="0.15" color="#FFFACD"></a-sphere>
+        <a-sphere position="0.8 0.8 1" radius="0.15" color="#FFFACD"></a-sphere>
+        
+        <!-- Side windows -->
+        <a-box position="-1.4 1.2 0" rotation="0 0 0" width="0.1" height="0.8" depth="1.5" color="#87CEEB" material="opacity: 0.6;"></a-box>
+        <a-box position="1.4 1.2 0" rotation="0 0 0" width="0.1" height="0.8" depth="1.5" color="#87CEEB" material="opacity: 0.6;"></a-box>
+
+        <!-- Rear window -->
+        <a-box position="0 1.2 -0.9" rotation="0 0 0" width="2.8" height="0.8" depth="0.1" color="#87CEEB" material="opacity: 0.6;"></a-box>
+      </a-box>
+      
+      <!-- Ground plane -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="15" height="15" color="#7BC8A4"></a-plane>
+      
+      <!-- Sky -->
+      <a-sky color="#87CEEB"></a-sky>
+    </a-scene>
+  </body>
+</html>
