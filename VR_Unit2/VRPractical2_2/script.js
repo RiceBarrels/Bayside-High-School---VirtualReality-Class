@@ -1,10 +1,11 @@
-
 let sunScale = 0;
+let scene;
+
 document.addEventListener("DOMContentLoaded",()=>{
-    const scene = document.querySelector("a-scene")
-    console.log(sunScale)
+    // scene = document.querySelector("a-scene")
+    window.setInterval(loop,1)
     
-    scene.addEventListener("loaded",(()=>window.setInterval(loop,1)))
+    // scene.addEventListener("loaded",(()=>window.setInterval(loop,1)))
 })
 
 function loop(){

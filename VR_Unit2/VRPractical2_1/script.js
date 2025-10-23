@@ -13,9 +13,20 @@ window.addEventListener("DOMContentLoaded",function() {
     createTree(x,0,z);
   }
    //Task 2: Use the createCloud(...)  to add several clouds to the scene at various positions.
-   createCloud(1,1,1)
+
+  for(let i = 0; i < 100; i++){
+    let x = rnd(-20,20);
+    let z = rnd(-20,20);
+    createCloud(x,10,z);
+  }
 
    //Task 4: Use the createHouse(...)  to add several houses to the scene at various positions.
+
+  for(let i = 0; i < 20; i++){
+    let x = rnd(-20,20);
+    let z = rnd(-20,20);
+    createHouse(x,0,z);
+  }
 })
 
 /* Task 1: Create a function createCloud that,
@@ -55,6 +66,38 @@ function createCloud(positionX=0,positionY=0,positionZ=0){
       5) Set house entities position to those passed in to the function.
       6) Add the house entity to the scene
 */
+
+
+function createHouse(x, y, z){
+  let house = document.createElement("a-entity");
+
+  let top = document.createElement("a-cylinder");
+  top.setAttribute("color", `rgb(${rnd(0,255)},${rnd(0,255)},${rnd(0,255)})`);
+  top.setAttribute("position", "0 4 0");
+  top.setAttribute("radius", "2");
+  top.setAttribute("height", "4");
+  top.setAttribute("segments-radial", "3");
+  top.setAttribute("rotation", "270 0 0");
+
+  house.append(top);
+
+
+  let bottom = document.createElement("a-box");
+  bottom.setAttribute("color", `rgb(${rnd(200,255)},${rnd(200,255)},${rnd(200,255)})`);
+  bottom.setAttribute("position", "0 1.5 0");
+  bottom.setAttribute("height", "3");
+  bottom.setAttribute("width", "3");
+  bottom.setAttribute("depth", "4");
+  bottom.setAttribute("rotation", "0 0 0");
+
+  house.append(bottom);
+
+  house.setAttribute("position",{x:x, y:y, z:z});
+  house.setAttribute("scale",{x:rnd(50,100)/100, y:rnd(50,100)/100, z:rnd(50,100)/100});
+  scene.append( house )
+
+}
+
 function createTree(x, y, z){
   let tree = document.createElement("a-entity");
   
