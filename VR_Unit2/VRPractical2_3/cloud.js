@@ -1,17 +1,17 @@
 class Cloud {
-    constructor(x,y,z){
-        this.x=x;
-        this.y=y;
-        this.z=z;
-        const cloudEntity = document.createElement("a-entity");
-        cloudEntity.setAttribute("position",{x:positionX,y:positionY,z:positionZ});
-        cloudEntity.setAttribute("id","cloud");
+    constructor(positionX,positionY,positionZ){
+        this.positionX=positionX;
+        this.positionY=positionY;
+        this.positionZ=positionZ;
+        this.cloudEntity = document.createElement("a-entity");
+        this.cloudEntity.setAttribute("position",{x:positionX,y:positionY,z:positionZ});
+        this.cloudEntity.setAttribute("id","cloud");
         this.ballMap=[0,0,0,0,0]
-        ballMap.map((ball)=>{
+        this.ballMap.map((ball)=>{
             ball = document.createElement("a-sphere");
             ball.setAttribute("scale",{x:rnd(1,2),y:rnd(1,2),z:rnd(1,2)});
             ball.setAttribute("position",{x:rnd(0,3),y:rnd(0,3),z:rnd(0,3)});
-            cloudEntity.append(ball);
+            this.cloudEntity.append(ball);
 
             return null;
         });
@@ -19,6 +19,6 @@ class Cloud {
 
     display(){
         const scene = document.querySelector("a-scene");
-        scene.append(cloudEntity);
+        scene.append(this.cloudEntity);
     }
 }
